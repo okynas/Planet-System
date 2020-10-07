@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Oblig4_STAR_StianMartinsen.main" target="13" />
+      <module name="Oblig4_STAR_StianMartinsen.test" target="13" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
