@@ -25,7 +25,7 @@
 
 <div align="center">
   <a href="https://https://github.com/okynas/">
-     <img src="https://github.com/okynas/Todo-App/blob/main/images/Todo-app.png" alt="Screenshot1" width="100%">
+     <!-- <img src="https://github.com/okynas/Todo-App/blob/main/images/Todo-app.png" alt="Screenshot1" width="100%"> -->
    </a>
 </div>
 
