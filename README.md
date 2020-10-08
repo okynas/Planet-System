@@ -75,7 +75,7 @@ I would also add docker to the project if I had more time.
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/okynas/Planet-System](https://github.com/okynas/Planet-System/blob/master/LICENSE.md)
+[https://github.com/okynas/Planet-System](https://github.com/okynas/Planet-System/blob/master/LICENSE)
 
 <!-- Markdown link & img dfn's -->
 <!-- [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
