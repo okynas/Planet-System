@@ -4,10 +4,10 @@
   <br>
   <br>
   <p>
-    <b>Planetary System - ...</b>
+    <b>Planetary System - Overview of the intersellar objeccts around us</b>
   </p>
   <p>
-     <i>... TODO ... </i>
+     <i>A CRUD rest-api with vue to view and modify over planetsystems</i>
   </p>
   <!-- <p> -->
   
@@ -25,7 +25,7 @@
 
 <div align="center">
   <a href="https://https://github.com/okynas/">
-     <!-- <img src="https://github.com/okynas/Todo-App/blob/main/images/Todo-app.png" alt="Screenshot1" width="100%"> -->
+     <img src="https://github.com/okynas/Planet-System/blob/master/images/one.PNG" alt="Screenshot1" width="100%">
    </a>
 </div>
 
