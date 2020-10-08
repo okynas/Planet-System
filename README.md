@@ -34,23 +34,16 @@
 
 ---
 
-- [Features](#features)
 - [Built with](#built-with)
 - [Installation](#installation)
 - [Usage](#usage)
-<!-- - [Timestamp](#timestamp)
-Why did you undertake the project?
-Lessons learned
-
--->
+- [Timestamp](#timestamp)
 - [Wish list](#wish-list)
 - [License]("license)
 
 ---
 
 </details>
-
-## **Features**
 
 ## **Built with**
 
@@ -61,11 +54,22 @@ Lessons learned
 - [Javalin](https://javalin.io/)
 
 ## **Installation**
+OS X, Linux and Windows:
+
+```sh
+git clone https://github.com/okynas/Planet-System.git
+```
 
 ## **Usage**
+To use this project, I usually ran it inside IntelliJ. So that is one possibility. You can also run it by using gradle and gradlew daemon. 
+
+## **Timestamp**
+10 Mars 2020 - 21 Mars 2020
 
 ## **Wish list**
 If I had more time or want/wanted to improve something, it would have to be the styling of the project. Since it was a school project, and the underlying task was primarily to build backend in java (javalin). I didn't fokus enough on the frontend part. Also because we had a finished stylesheet (css). 
+
+I would also add docker to the project if I had more time.
 
 ## **License**
 
