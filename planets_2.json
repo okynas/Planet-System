@@ -228,4 +228,48 @@
       "orbitalPeriod" : 365.0
     }]
   } ]
-}]
+
+},
+{
+  "name" : "Solar System 2",
+  "pictureUrl" : "http://bit.ly/3cVhuZc",
+  "centerStar" : {
+    "type" : "star",
+    "name" : "Sun",
+    "pictureUrl" : "http://bit.ly/333CTus",
+    "radius" : 695342.0,
+    "mass" : 1.9885E30,
+    "effectiveTemperature" : 5777.0
+  },
+  "planets" : [ {
+    "type" : "Planet",
+    "name" : "Earth",
+    "pictureUrl" : "http://bit.ly/33bvXLZ",
+    "radius" : 6371.0,
+    "mass" : 5.972E24,
+    "semiMajorAxis" : 1.0,
+    "eccentricity" : 0.017,
+    "orbitalPeriod" : 365.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  }
+   ]
+  }
+]
+
