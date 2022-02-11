@@ -8,6 +8,7 @@ public class Moon extends NaturalSatellite {
 
     /**
      * Konstruktør(er) for å opprette Måne med ulike parametere som kan sendes med.
+     * Bruker tomme konstruktører ettersom plugin "JACKSON" krever det.
      */
     public Moon() {
 

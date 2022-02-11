@@ -3,6 +3,19 @@ package no.hiof.stianmar.oblig4.model;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+
+/**
+ * Disse "merknadene" er med for å støtte polymorfisme ved deserialisering, (konstruere java objekt i minet ved input av byte stream)
+ * Ved kjøring ved deserialisering vil koden vite hvilken klasse den bør forvente.
+ *
+ * Bruker også SubTyper til å fortelle koden hva som skal forvente av undergrupper:
+ *
+ * {
+ *     name: stian martinsen
+ *     adress: ...
+ *     ...
+ * }
+ */
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
@@ -13,11 +26,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = Moon.class, name = "moon")
 })
 
+/**
+ * Benytter comparable til å sammenligne planeter. Les mer om i bunn av koden!
+ */
 public abstract class CelestialBody implements Comparable<Planet>{
     private String name, pictureUrl;
     private double radius;
     private double mass;
-    public static final int AU = 149597871;
+
+    public static final int ASTRONOMICAL_UNITS_IN_KM = 149597871;
     public static final double GRAVITATIONAL_CONSTANT = 6.67408E-11;
 
     public CelestialBody() {
@@ -74,6 +91,10 @@ public abstract class CelestialBody implements Comparable<Planet>{
         return "The CelestialBody: " + getName() + " is a celestial body";
     }
 
+    /**
+     * Sammenligner to planeters med hverandre. Denne metoden brukes videre i PlanetController->getAllPlanets() for å
+     * sortere planetene etter navn, masse, nummer og radius.
+     */
     @Override
     public int compareTo(Planet thisPlanet) {
         return this.name.compareTo(thisPlanet.getName());

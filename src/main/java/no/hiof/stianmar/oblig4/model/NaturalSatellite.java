@@ -8,7 +8,6 @@ public abstract class NaturalSatellite extends CelestialBody{
     private double eccentricity;
     private double orbitalPeriod;
     private CelestialBody centralCelestialBody;
-    private String pictureUrl;
 
     public NaturalSatellite() {
 
@@ -20,7 +19,6 @@ public abstract class NaturalSatellite extends CelestialBody{
         this.eccentricity = eccentricity;
         this.orbitalPeriod = orbitalPeriod;
         this.centralCelestialBody = celestialBody;
-        this.pictureUrl = pictureUrl;
     }
 
     public NaturalSatellite(String name, double mass, double radius,  double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl) {
@@ -77,19 +75,11 @@ public abstract class NaturalSatellite extends CelestialBody{
         this.centralCelestialBody = centralCelestialBody;
     }
 
-    public String getPictureUrl() {
-        return pictureUrl;
-    }
-
-    public void setPictureUrl(String pictureUrl) {
-        this.pictureUrl = pictureUrl;
-    }
-
     public int distanceToCentralBody(double degrees) {
         double a = getSemiMajorAxis();
         double e = getEccentricity();
 
-        return (int) ( AU *(a * ( 1 - Math.pow(e, 2) ) ) / (1 + e * Math.cos(Math.toRadians(degrees))));
+        return (int) ( ASTRONOMICAL_UNITS_IN_KM *(a * ( 1 - Math.pow(e, 2) ) ) / (1 + e * Math.cos(Math.toRadians(degrees))));
     }
 
     public int distanceToCentralBodyRadian(double radians) {

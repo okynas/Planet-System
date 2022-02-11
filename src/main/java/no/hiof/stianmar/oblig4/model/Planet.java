@@ -98,6 +98,7 @@ public class Planet extends NaturalSatellite {
      */
     @Override
     public String toString() {
-        return "The planet: " + getName() + " has a radius of: " + getRadius() + "km and has a mass of: " + getMass() + " kg.";
+        return getName();
+        //return "The planet: " + getName() + " has a radius of: " + getRadius() + "km and has a mass of: " + getMass() + " kg.";
     }
 }

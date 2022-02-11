@@ -11,6 +11,9 @@ public class PlanetSystem implements Comparable<Planet>{
     private Star centerStar;
     private ArrayList<Planet> planets;
 
+    private Planet greatestPlanet;
+    private Planet smallestPlanet;
+
     public PlanetSystem() {
 
     }
@@ -54,6 +57,9 @@ public class PlanetSystem implements Comparable<Planet>{
         this.planets = planets;
     }
 
+    /**
+     * Hent ut en planet knyttet til et planetsystem.
+     */
     public Planet getOnePlanet(String name) {
         ArrayList<Planet> allPlanets = getPlanets();
 
@@ -67,9 +73,14 @@ public class PlanetSystem implements Comparable<Planet>{
         return null;
     }
 
-    public Planet greatestPlanet() {
+    /**
+     * En metode for å finne størst planet i planetsystemet / solsystemet.
+     * Hvis to planeter har lik radius, vil det regnes ut største planet etter
+     * masse.
+     */
+    public Planet getGreatestPlanet() {
         Planet greatestPlanet = getPlanets().get(0);
-        double max = getPlanets().get(0).getRadius();
+        double max = greatestPlanet.getRadius();
 
         for (int i = 1; i < getPlanets().size(); i++) {
 
@@ -83,14 +94,16 @@ public class PlanetSystem implements Comparable<Planet>{
             }
 
         }
-
         return greatestPlanet;
-
     }
 
-    public Planet smallestPlanet() {
+    /**
+     * En metode for å finne minste planet, hvis to planeter har lik radius,
+     * vil minste planet regners ut ift masse.
+     */
+    public Planet getSmallestPlanet() {
         Planet smallestPlanet = getPlanets().get(0);
-        double min = getPlanets().get(0).getRadius();
+        double min = smallestPlanet.getRadius();
 
         for (int i = 1; i < getPlanets().size(); i++) {
 
@@ -98,7 +111,7 @@ public class PlanetSystem implements Comparable<Planet>{
                 min = getPlanets().get(i).getRadius();
                 smallestPlanet = getPlanets().get(i);
             } else if (min == getPlanets().get(i).getRadius()) {
-                if (smallestPlanet().getMass() > getPlanets().get(i).getMass()) {
+                if (getSmallestPlanet().getMass() > getPlanets().get(i).getMass()) {
                     smallestPlanet = getPlanets().get(i);
                 }
             }
@@ -118,6 +131,10 @@ public class PlanetSystem implements Comparable<Planet>{
         return names;
     }
 
+    /**
+     * Sammenligner to planeters med hverandre. Denne metoden brukes videre i PlanetController->getAllPlanets() for å
+     * sortere planetene etter navn, masse, nummer og radius.
+     */
     @Override
     public int compareTo(Planet sammenligningsPlanet) {
         return this.name.compareTo(sammenligningsPlanet.getName());

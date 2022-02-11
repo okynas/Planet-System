@@ -38,10 +38,11 @@ public class UniverseJSONRepository implements IUniverseRepository{
 
     }
 
-    /*public UniverseJSONRepository(File file) {
-
-    }*/
-
+    /**
+     * Bruker ObjectMapper til å serialisere og de-serialisere mellom java objekter og JSON.
+     *
+     * DE-serialisere = transformere bytes fra en fil f.eks og gjør det om til data i minnet.
+     */
     private ArrayList<PlanetSystem> readFromJSONFile(String filnavn) {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -58,6 +59,11 @@ public class UniverseJSONRepository implements IUniverseRepository{
         return planetSystemsReadFromFile;
     }
 
+    /**
+     * Bruker objectMApper til å
+     *
+     * Serialisere = transformere data i minnet til en sekvens av bytes som kan lagres i en datafil.
+     */
     public static void writeToJSONFile(String filnavn, ArrayList<PlanetSystem> planetSystems) {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -114,7 +120,7 @@ public class UniverseJSONRepository implements IUniverseRepository{
                 if (planetSystem.getName().equals(planetSystemName) && !planetSystem.getPlanets().get(i).getName().equals(planetName)) {
 
                     Star centralStar = planetSystem.getCenterStar();
-                    Moon moon = new Moon();
+                    Moon moon = new Moon("Moon", 6371.0, 5.972E24, 1.0, 0.017, 365.0);
                     ArrayList<Moon> moons = new ArrayList<>();
                     moons.add(moon);
 
