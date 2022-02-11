@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Star.class, name = "star"),
-        @JsonSubTypes.Type(value = Planet.class, name = "Planet")
+        @JsonSubTypes.Type(value = Planet.class, name = "Planet"),
+        @JsonSubTypes.Type(value = Moon.class, name = "moon")
 })
 
 public abstract class CelestialBody implements Comparable<Planet>{

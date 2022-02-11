@@ -1,5 +1,7 @@
 package no.hiof.stianmar.oblig4.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public abstract class NaturalSatellite extends CelestialBody{
 
     private double semiMajorAxis;
@@ -18,6 +20,21 @@ public abstract class NaturalSatellite extends CelestialBody{
         this.eccentricity = eccentricity;
         this.orbitalPeriod = orbitalPeriod;
         this.centralCelestialBody = celestialBody;
+        this.pictureUrl = pictureUrl;
+    }
+
+    public NaturalSatellite(String name, double mass, double radius,  double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl) {
+        super(name, mass, radius, pictureUrl);
+        this.semiMajorAxis = semiMajorAxis;
+        this.eccentricity = eccentricity;
+        this.orbitalPeriod = orbitalPeriod;
+    }
+
+    public NaturalSatellite(String name, double mass, double radius,  double semiMajorAxis, double eccentricity, double orbitalPeriod) {
+        super(name, mass, radius);
+        this.semiMajorAxis = semiMajorAxis;
+        this.eccentricity = eccentricity;
+        this.orbitalPeriod = orbitalPeriod;
     }
 
     public NaturalSatellite(String name, double mass, double radius,  double semiMajorAxis, double eccentricity, double orbitalPeriod, CelestialBody celestialBody) {
@@ -58,6 +75,14 @@ public abstract class NaturalSatellite extends CelestialBody{
 
     public void setCentralCelestialBody(CelestialBody centralCelestialBody) {
         this.centralCelestialBody = centralCelestialBody;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public int distanceToCentralBody(double degrees) {

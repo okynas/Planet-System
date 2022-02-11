@@ -1,10 +1,24 @@
 package no.hiof.stianmar.oblig4.model;
 
+/**
+ * Moon class, extender / utvidder NaturalSatellite. (Inheritance / Arv)
+ * Moon klassen arver fra natural satellite, det vil si at moon arver metodene og attributtene til natural satellite.
+ */
 public class Moon extends NaturalSatellite {
 
-    public Moon(String name, double radius, double mass, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl) {
+    /**
+     * Konstruktør(er) for å opprette Måne med ulike parametere som kan sendes med.
+     */
+    public Moon() {
 
-        super(name, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod, null, pictureUrl);
+    }
+
+    public Moon(String name, double radius, double mass, double semiMajorAxis, double eccentricity, double orbitalPeriod) {
+        super(name, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod);
+    }
+
+    public Moon(String name, double radius, double mass, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl) {
+        super(name, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod, pictureUrl);
     }
 
     @Override

@@ -1,6 +1,7 @@
 <template id="planet-detail">
     <div v-if="planet" class="detail-planet-container">
         {{console.log(this.planet)}}
+        <a href="#" class="homeBTN">&larr; HOME</a>
         <h1>{{planet.name}}</h1>
         <img v-if="planet.pictureUrl" v-bind:src="planet.pictureUrl" />
         <img v-else class="list-image" src="https://exoplanets.nasa.gov/system/resources/detail_files/137_heic1312a.jpg"/>
@@ -48,6 +49,7 @@
                 .then(res => res.json())
                 .then(res => {
                     this.planet = res;
+                    console.log(res)
                     this.moons = res.moon;
                 })
                 .catch(() => alert("Error while fetching planet"));

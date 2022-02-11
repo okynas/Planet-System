@@ -2,6 +2,7 @@ package no.hiof.stianmar.oblig4.controller;
 
 import io.javalin.http.Context;
 import no.hiof.stianmar.oblig4.Application;
+import no.hiof.stianmar.oblig4.model.Moon;
 import no.hiof.stianmar.oblig4.model.Planet;
 import no.hiof.stianmar.oblig4.repository.IUniverseRepository;
 
@@ -24,6 +25,14 @@ public class PlanetController {
         Planet onePlanet = universeRepository.getPlanet(planetSystemName, planetName);
 
         context.json(onePlanet);
+    }
+
+    public void getAllMoons(Context context) {
+        String planetSystemName = context.pathParam("planet-system-id");
+        String planetName = context.pathParam("planet-id");
+        ArrayList<Moon> moons = universeRepository.getAllMoons(planetSystemName, planetName);
+
+        context.json(moons);
     }
 
     public void getAllPlanets(Context context) {
