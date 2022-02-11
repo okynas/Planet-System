@@ -98,7 +98,7 @@ public class UniverseJSONRepository implements IUniverseRepository{
             return currentPlanet;
         }
 
-        return null;
+        return new ArrayList<>();
     }
 
     @Override
@@ -114,7 +114,11 @@ public class UniverseJSONRepository implements IUniverseRepository{
                 if (planetSystem.getName().equals(planetSystemName) && !planetSystem.getPlanets().get(i).getName().equals(planetName)) {
 
                     Star centralStar = planetSystem.getCenterStar();
-                    Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl);
+                    Moon moon = new Moon();
+                    ArrayList<Moon> moons = new ArrayList<>();
+                    moons.add(moon);
+
+                    Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
                     ArrayList<Planet> planets = planetSystem.getPlanets();
                     planets.add(newPlanet);
 
@@ -221,7 +225,13 @@ public class UniverseJSONRepository implements IUniverseRepository{
     }
 
     @Override
-    public ArrayList<Moon> getAllMoons(String planetSystemName) {
-        return null;
+    public ArrayList<Moon> getAllMoons(String planetSystemName, String planetName) {
+        ArrayList<Moon> allMoons = getPlanet(planetSystemName, planetName).getMoon();
+
+        if (allMoons != null) {
+            return allMoons;
+        }
+
+        return new ArrayList<Moon>();
     }
 }

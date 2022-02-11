@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Star extends CelestialBody {
 
     private double effectiveTemperature;
-    public static double solarMass = 1.98892E30;
-    public static int solarRadius = 695700;
+    private static final double solarMass = 1.98892E30;
+    private static final int solarRadius = 695700;
 
     public Star() {
 

@@ -1,0 +1,231 @@
+[{
+  "name" : "Solar System",
+  "pictureUrl" : "http://bit.ly/3cVhuZc",
+  "centerStar" : {
+    "type" : "star",
+    "name" : "Sun",
+    "pictureUrl" : "http://bit.ly/333CTus",
+    "radius" : 695342.0,
+    "mass" : 1.9885E30,
+    "effectiveTemperature" : 5777.0
+  },
+  "planets" : [ {
+    "type" : "Planet",
+    "name" : "Earth",
+    "pictureUrl" : "http://bit.ly/33bvXLZ",
+    "radius" : 6371.0,
+    "mass" : 5.972E24,
+    "semiMajorAxis" : 1.0,
+    "eccentricity" : 0.017,
+    "orbitalPeriod" : 365.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  },
+    {
+    "type" : "Planet",
+    "name" : "Jupiter",
+    "pictureUrl" : "http://bit.ly/2Q0fjK3",
+    "radius" : 69911.0,
+    "mass" : 1.898E27,
+    "semiMajorAxis" : 5.2044,
+    "eccentricity" : 0.049,
+    "orbitalPeriod" : 4380.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  }, {
+    "type" : "Planet",
+    "name" : "Mars",
+    "pictureUrl" : "http://bit.ly/3aGyFvr",
+    "radius" : 3389.5,
+    "mass" : 6.39E23,
+    "semiMajorAxis" : 1.524,
+    "eccentricity" : 0.093,
+    "orbitalPeriod" : 687.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  }, {
+    "type" : "Planet",
+    "name" : "Neptune",
+    "pictureUrl" : "http://bit.ly/38AyEba",
+    "radius" : 24622.0,
+    "mass" : 1.024E26,
+    "semiMajorAxis" : 30.11,
+    "eccentricity" : 0.01,
+    "orbitalPeriod" : 60225.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  },
+    {
+    "type" : "Planet",
+    "name" : "Saturn",
+    "pictureUrl" : "http://bit.ly/2W0sqic",
+    "radius" : 58232.0,
+    "mass" : 5.683E26,
+    "semiMajorAxis" : 9.5826,
+    "eccentricity" : 0.057,
+    "orbitalPeriod" : 10585.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  }, {
+    "type" : "Planet",
+    "name" : "Uranus",
+    "pictureUrl" : "http://bit.ly/335pbHy",
+    "radius" : 25362.0,
+    "mass" : 8.681E25,
+    "semiMajorAxis" : 19.2184,
+    "eccentricity" : 0.046,
+    "orbitalPeriod" : 30660.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  }, {
+    "type" : "Planet",
+    "name" : "Venus",
+    "pictureUrl" : "http://bit.ly/2W3p4L9",
+    "radius" : 6051.8,
+    "mass" : 4.867E24,
+    "semiMajorAxis" : 0.723,
+    "eccentricity" : 0.007,
+    "orbitalPeriod" : 225.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  }, {
+    "type" : "Planet",
+    "name" : "Mercury",
+    "pictureUrl" : "http://bit.ly/2TB2Heo",
+    "radius" : 2439.7,
+    "mass" : 3.283E23,
+    "semiMajorAxis" : 0.387,
+    "eccentricity" : 0.206,
+    "orbitalPeriod" : 88.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [{
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+      "radius" : 6371.0,
+      "mass" : 5.972E24,
+      "semiMajorAxis" : 1.0,
+      "eccentricity" : 0.017,
+      "orbitalPeriod" : 365.0
+    }]
+  } ]
+}]

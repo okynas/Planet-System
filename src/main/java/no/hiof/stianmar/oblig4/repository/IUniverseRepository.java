@@ -23,6 +23,6 @@ public interface IUniverseRepository {
     void deletePlanet(String planetSystemNavn, String planetNavn, String filkilde) throws IOException;
 
     Moon getOneMoon(String moonName);
-    ArrayList<Moon> getAllMoons(String planetSystemName);
+    ArrayList<Moon> getAllMoons(String planetSystemName, String planetName);
 }
 
