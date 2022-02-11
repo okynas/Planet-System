@@ -231,7 +231,7 @@
 
 },
 {
-  "name" : "Solar System 4",
+  "name" : "Solar System2",
   "pictureUrl" : "http://bit.ly/3cVhuZc",
   "centerStar" : {
     "type" : "star",
@@ -272,4 +272,3 @@
    ]
   }
 ]
-
