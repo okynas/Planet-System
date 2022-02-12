@@ -15,6 +15,14 @@
             <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a>
         </p>
 
+        <h2>Moons</h2>
+
+        <p>
+            <!-- <a class="button" :href="`/api/planet-systems/${planetSystemName}/planets/${planet.name}/delete`">Delete</a> -->
+            <!-- <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a> -->
+            <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/createmoon`">Create</a>
+        </p>
+
         <ul class="list-of-moons">
             <li v-for="moon in moons" class="link-to-planet-details" >
                 <div v-if="moon">
@@ -23,12 +31,13 @@
                         <div class="single-planet-container" >
                             <h1>{{moon.name}}</h1>
                             <img v-if="moon.pictureUrl" class="list-image" v-bind:src="moon.pictureUrl">
-                            <img v-else class="list-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
+                            <img v-else class="list-image" src="https://exoplanets.nasa.gov/system/resources/detail_files/137_heic1312a.jpg">
                         </div>
                     </a>
                 </div>
             </li>
         </ul>
+
     </div>
 </template>
 <script>

@@ -80,7 +80,12 @@ public class Application {
         app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon", moonController::getAllMoons);
         app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", moonController::getOneMoon);
 
+        // create planet
+        app.get("/planet-systems/:planet-system-id/planets/:planet-id/createmoon", new VueComponent("moon-create"));
+        app.post("/api/planet-systems/:planet-system-id/planets/:planet-id/createmoon", moonController::createMoon);
+
         app.get("/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", new VueComponent("moon-detail"));
+
 
         // TODO:
         // Adding routes to create moon

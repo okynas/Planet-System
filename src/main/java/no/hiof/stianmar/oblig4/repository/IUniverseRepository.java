@@ -24,5 +24,6 @@ public interface IUniverseRepository {
 
     Moon getOneMoon(String planetSystemName, String planetName, String moonName);
     ArrayList<Moon> getAllMoons(String planetSystemName, String planetName);
+    void createMoon(String planetSystemName, String planetName, String moonName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde);
 }
 

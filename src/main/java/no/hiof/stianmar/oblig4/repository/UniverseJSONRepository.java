@@ -105,9 +105,6 @@ public class UniverseJSONRepository implements IUniverseRepository{
             if (planetSystem.getName().equals(planetSystemName) && planetSystem.getPlanets().size() == 0) {
                 System.out.println("No planets, creating noww");
                 Star centralStar = planetSystem.getCenterStar();
-                /*Moon moon = new Moon("Moon", 6371.0, 5.972E24, 1.0, 0.017, 365.0);
-                ArrayList<Moon> moons = new ArrayList<>();
-                moons.add(moon);*/
 
                 Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
                 ArrayList<Planet> planets = planetSystem.getPlanets();
@@ -178,7 +175,7 @@ public class UniverseJSONRepository implements IUniverseRepository{
             for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
                 if (!planetSystem.getName().equals(planetSystemNavn) && planetSystem.getPlanets().get(i) == null) {
                     System.out.println("Planet does not exist");
-                } else if (planetSystem.getPlanets().get(i).getName().equals(planetNavn)) {
+                } else if (planetSystem.getPlanets().get(i).getName().equals(planetNavn) && planetSystem.getName().equals(planetSystemNavn)) {
 
                     ArrayList<Planet> planets = planetSystem.getPlanets();
                     planets.remove(planetSystem.getPlanets().get(i));
@@ -244,5 +241,31 @@ public class UniverseJSONRepository implements IUniverseRepository{
         }
 
         return new ArrayList<Moon>();
+    }
+
+    @Override
+    public void createMoon(String planetSystemName, String planetName, String moonName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde) {
+
+        for (PlanetSystem planetSystem : planetSystems) {
+
+            for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
+
+                if (planetSystem.getName().equals(planetSystemName) && planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+
+                    for (int j = 0; j < planetSystem.getPlanets().get(i).getMoon().size(); j++) {
+
+                        if ( !planetSystem.getPlanets().get(i).getMoon().get(j).equals(moonName)) {
+                            Moon moon = new Moon(moonName, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod);
+                            ArrayList<Moon> moons = planetSystem.getPlanets().get(i).getMoon();
+                            moons.add(moon);
+                            writeToJSONFile(filkilde, planetSystems);
+                            break;
+                        } else {
+                            System.out.println("Moon exists");
+                        }
+                    }
+                }
+            }
+        }
     }
 }
