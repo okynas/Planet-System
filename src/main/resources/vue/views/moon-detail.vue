@@ -1,56 +1,58 @@
-<template id="planet-detail">
-    <div v-if="planet" class="detail-planet-container">
-        {{console.log(this.planet)}}
-        <a class="backBtn2" v-bind:href="'/planet-systems/' + planetSystemName ">Back</a>
-        <h1>{{planet.name}}</h1>
-        <img v-if="planet.pictureUrl" v-bind:src="planet.pictureUrl" />
-        <img v-else class="list-image" src="https://exoplanets.nasa.gov/system/resources/detail_files/137_heic1312a.jpg"/>
+<template id="moon-detail">
+    <div v-if="moon" class="detail-planet-container">
+        {{console.log(this.moon)}}
+        <!-- /planet-systems/${planetSystemId}/planets/${planetId}/moon/${moonId} -->
 
-        <p>The mass of {{planet.name}} is {{planet.mass}} kg, it has a radius of {{planet.radius}} km,
-            the eccentricity or the deviation of orbit is from a circularity is {{planet.eccentricity}}.</p>
-        <p>It spins around the star {{planet.centralCelestialBody.name}} with an orbiting period of {{planet.orbitalPeriod}} days.</p>
+        <a class="backBtn2" v-bind:href="'/planet-systems/' + planetSystemName + '/planets/' + planet ">Back</a>
 
-        <p>
+        <h1>{{moon.name}}</h1>
+        <img class="main-image"  v-if="moon.pictureUrl" v-bind:src="moon.pictureUrl" />
+        <img v-else class="main-image" src="https://exoplanets.nasa.gov/system/resources/detail_files/137_heic1312a.jpg"/>
+
+        <p>The mass of {{moon.name}} is {{moon.mass}} kg, it has a radius of {{moon.radius}} km,
+            the eccentricity or the deviation of orbit is from a circularity is {{moon.eccentricity}}.</p>
+        <p>Orbiting period of {{moon.orbitalPeriod}} days.</p>
+
+        <!-- <p>
             <a class="button" :href="`/api/planet-systems/${planetSystemName}/planets/${planet.name}/delete`">Delete</a>
             <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a>
-        </p>
+        </p> -->
 
-        <ul class="list-of-moons">
+        <!-- <ul class="list-of-moons">
             <li v-for="moon in moons" class="link-to-planet-details" >
                 <div v-if="moon">
                     <p>{{moon.name}}</p>
-                    <a v-if="planet" class="link-to-moon-details" v-bind:href="'/planet-systems/' + planetSystemName + '/planets/' + planet.name +'/moon/' + moon.name">
+                    <span v-if="planet" class="link-to-moon-details">
                         <div class="single-planet-container" >
                             <h1>{{moon.name}}</h1>
                             <img v-if="moon.pictureUrl" class="list-image" v-bind:src="moon.pictureUrl">
                             <img v-else class="list-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
                         </div>
-                    </a>
+                    </span>
                 </div>
             </li>
-        </ul>
+        </ul> -->
     </div>
 </template>
 <script>
-    Vue.component("planet-detail", {
-        template: "#planet-detail",
+    Vue.component("moon-detail", {
+        template: "#moon-detail",
         data: () => ({
             planet: null,
-            moons: [],
+            moon: null,
             planetSystemName: "",
         }),
         created() {
             const planetSystemId = this.$javalin.pathParams["planet-system-id"];
             this.planetSystemName = planetSystemId;
-            console.log("Planet system id: " + planetSystemId);
             const planetId = this.$javalin.pathParams["planet-id"];
-            fetch(`/api/planet-systems/${planetSystemId}/planets/${planetId}`)
+            this.planet = planetId;
+            const moonId = this.$javalin.pathParams["moon-id"];
+            fetch(`/api/planet-systems/${planetSystemId}/planets/${planetId}/moon/${moonId}`)
 
                 .then(res => res.json())
                 .then(res => {
-                    this.planet = res;
-                    console.log(res)
-                    this.moons = res.moon;
+                    this.moon = res
                 })
                 .catch(() => alert("Error while fetching planet"));
         }
@@ -58,13 +60,10 @@
 </script>
 <style>
 
-    .backBtn2 {
-        text-align: center;
-        color: white;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        font-size: 20px;
+    img.main-image {
+        width: 400px;
     }
+
     ul{
        color:white;
     }

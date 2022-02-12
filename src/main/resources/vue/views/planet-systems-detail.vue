@@ -1,5 +1,6 @@
 <template id="planet-systems-detail">
     <div class="content-wrapper">
+    <a class="backBtn" href='/planet-systems/'>Back</a>
         <div v-if="planetSystem" class="detail-planet-system-container">
             <img v-if="planetSystem.pictureUrl" class="cover-image" v-bind:src="planetSystem.pictureUrl">
             <img v-else class="cover-image" src="https://cdn.wallpapersafari.com/30/98/cOg2QG.jpg">
@@ -64,6 +65,15 @@
     });
 </script>
 <style>
+
+    .backBtn {
+        text-align: center;
+        color: white;
+        margin-left: 50%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
 
     .planet-overview-list, .moon-overview-list{
         color:black;
