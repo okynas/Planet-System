@@ -19,23 +19,8 @@ public class UniverseJSONRepository implements IUniverseRepository{
     private ArrayList<PlanetSystem> planetSystems = new ArrayList<>();
 
     public UniverseJSONRepository(String filnavn) {
-
         ArrayList<PlanetSystem> planetSystemerFraJSONFil = readFromJSONFile(filnavn);
-
         planetSystems.addAll(planetSystemerFraJSONFil);
-
-        // deletePlanet("Solar System", "Mars", filnavn);
-        /* createPlanet("Solar System",
-         "Mars",
-         6.39E23,
-         3389.5,
-         1.524,
-         0.093,
-         687,
-         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mars_23_aug_2003_hubble.jpg/480px-Mars_23_aug_2003_hubble.jpg",
-         filnavn);
-         */
-
     }
 
     /**
@@ -115,24 +100,39 @@ public class UniverseJSONRepository implements IUniverseRepository{
     @Override
     public void createPlanet(String planetSystemName, String planetName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde) {
 
+        System.out.println("Starting create planet");
         for (PlanetSystem planetSystem : planetSystems) {
-            for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
-                if (planetSystem.getName().equals(planetSystemName) && !planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+            if (planetSystem.getName().equals(planetSystemName) && planetSystem.getPlanets().size() == 0) {
+                System.out.println("No planets, creating noww");
+                Star centralStar = planetSystem.getCenterStar();
+                /*Moon moon = new Moon("Moon", 6371.0, 5.972E24, 1.0, 0.017, 365.0);
+                ArrayList<Moon> moons = new ArrayList<>();
+                moons.add(moon);*/
 
-                    Star centralStar = planetSystem.getCenterStar();
-                    Moon moon = new Moon("Moon", 6371.0, 5.972E24, 1.0, 0.017, 365.0);
-                    ArrayList<Moon> moons = new ArrayList<>();
-                    moons.add(moon);
+                Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
+                ArrayList<Planet> planets = planetSystem.getPlanets();
+                planets.add(newPlanet);
 
-                    Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
-                    ArrayList<Planet> planets = planetSystem.getPlanets();
-                    planets.add(newPlanet);
+                writeToJSONFile(filkilde, planetSystems);
+                break;
+            }
+            else {
+                for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
+                    if (planetSystem.getName().equals(planetSystemName) && !planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+                        System.out.println("CREATING");
 
-                    writeToJSONFile(filkilde, planetSystems);
-                    break;
+                        Star centralStar = planetSystem.getCenterStar();
 
-                } else if (planetSystem.getPlanets().get(i).getName().equals(planetName)) {
-                    System.out.println("Planet does exist");
+                        Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
+                        ArrayList<Planet> planets = planetSystem.getPlanets();
+                        planets.add(newPlanet);
+
+                        writeToJSONFile(filkilde, planetSystems);
+                        break;
+
+                    } else if (planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+                        System.out.println("Planet does exist");
+                    }
                 }
             }
         }
@@ -185,7 +185,6 @@ public class UniverseJSONRepository implements IUniverseRepository{
 
                     writeToJSONFile(filkilde, planetSystems);
                     break;
-
                 }
             }
         }

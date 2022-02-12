@@ -78,7 +78,8 @@ public class PlanetSystem implements Comparable<Planet>{
      * Hvis to planeter har lik radius, vil det regnes ut største planet etter
      * masse.
      */
-    public Planet getGreatestPlanet() {
+    @JsonIgnore
+    public Planet greatestPlanet() {
         Planet greatestPlanet = getPlanets().get(0);
         double max = greatestPlanet.getRadius();
 
@@ -101,7 +102,8 @@ public class PlanetSystem implements Comparable<Planet>{
      * En metode for å finne minste planet, hvis to planeter har lik radius,
      * vil minste planet regners ut ift masse.
      */
-    public Planet getSmallestPlanet() {
+    @JsonIgnore
+    public Planet smallestPlanet() {
         Planet smallestPlanet = getPlanets().get(0);
         double min = smallestPlanet.getRadius();
 
@@ -111,7 +113,7 @@ public class PlanetSystem implements Comparable<Planet>{
                 min = getPlanets().get(i).getRadius();
                 smallestPlanet = getPlanets().get(i);
             } else if (min == getPlanets().get(i).getRadius()) {
-                if (getSmallestPlanet().getMass() > getPlanets().get(i).getMass()) {
+                if (smallestPlanet().getMass() > getPlanets().get(i).getMass()) {
                     smallestPlanet = getPlanets().get(i);
                 }
             }

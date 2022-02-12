@@ -83,7 +83,6 @@ public class Application {
         app.get("/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", new VueComponent("moon-detail"));
 
         // TODO:
-        // Adding routes to one moon
         // Adding routes to create moon
         // Adding routes to update moon
         // Adding routes to delete moon

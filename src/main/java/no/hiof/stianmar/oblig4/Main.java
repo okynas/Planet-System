@@ -104,5 +104,8 @@ public class Main {
         // create solar system
         PlanetSystem milkyWay = new PlanetSystem("Solar System", sun, planetsInSolarSystem, "https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg");
 
+        System.out.println(milkyWay.greatestPlanet());
+        System.out.println(milkyWay.smallestPlanet());
+
     }
 }
