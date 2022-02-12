@@ -37,16 +37,16 @@ public class Application {
         // ROUTING TO Planetsystems
         //
 
+        // create
+        app.get("/planet-systems/createPlanetSystem", new VueComponent("planet-systems-create"));
+        app.post("/api/planet-systems/createPlanetSystem", planetSystemController::createPlanetSystem);
+
         // - overview / detail
         app.get("/planet-systems", new VueComponent("planet-systems-overview"));
         app.get("/planet-systems/:planet-system-id", new VueComponent("planet-systems-detail"));
 
         app.get("/api/planet-systems", planetSystemController::getAllPlanetSystems);
         app.get("/api/planet-systems/:planet-system-id", planetSystemController::getOnePlanetSystem);
-
-        // create
-        app.get("/planet-systems/createPlanetSystem", new VueComponent("planet-systems-create"));
-        app.post("/api/planet-systems/createPlanetSystem", planetSystemController::createPlanetSystem);
 
         // delete
         app.get("/api/planet-systems/:planet-system-id/delete", planetSystemController::deletePlanetSystem);

@@ -106,6 +106,8 @@ public class Main {
 
         System.out.println(milkyWay.greatestPlanet());
         System.out.println(milkyWay.smallestPlanet());
+        System.out.println(milkyWay.smallestPlanet().surfaceGravity() + " kg/m^2");
+        System.out.println(earth.surfaceGravity() + " kg/m^2");
 
     }
 }

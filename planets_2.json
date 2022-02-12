@@ -26,7 +26,17 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : null
+    "moon" : [ {
+      "type" : "moon",
+      "name" : "Moon",
+      "pictureUrl" : null,
+      "radius" : 2.0,
+      "mass" : 2.0,
+      "semiMajorAxis" : 2.0,
+      "eccentricity" : 2.0,
+      "orbitalPeriod" : 2.0,
+      "centralCelestialBody" : null
+    } ]
   }, {
     "type" : "Planet",
     "name" : "Jupiter",
@@ -36,6 +46,24 @@
     "semiMajorAxis" : 5.2044,
     "eccentricity" : 0.049,
     "orbitalPeriod" : 4380.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : null
+  }, {
+    "type" : "Planet",
+    "name" : "Mars",
+    "pictureUrl" : "http://bit.ly/3aGyFvr",
+    "radius" : 3389.5,
+    "mass" : 6.39E23,
+    "semiMajorAxis" : 1.524,
+    "eccentricity" : 0.093,
+    "orbitalPeriod" : 687.0,
     "centralCelestialBody" : {
       "type" : "star",
       "name" : "Sun",
@@ -135,35 +163,17 @@
       "effectiveTemperature" : 5777.0
     },
     "moon" : null
-  }, {
-    "type" : "Planet",
-    "name" : "Mars",
-    "pictureUrl" : "http://bit.ly/3aGyFvr",
-    "radius" : 3389.5,
-    "mass" : 6.39E23,
-    "semiMajorAxis" : 1.524,
-    "eccentricity" : 0.093,
-    "orbitalPeriod" : 687.0,
-    "centralCelestialBody" : {
-      "type" : "star",
-      "name" : "Sun",
-      "pictureUrl" : "http://bit.ly/333CTus",
-      "radius" : 695342.0,
-      "mass" : 1.9885E30,
-      "effectiveTemperature" : 5777.0
-    },
-    "moon" : null
   } ]
 }, {
-  "name" : "Solar System2",
-  "pictureUrl" : "http://bit.ly/3cVhuZc",
+  "name" : "Kepler",
+  "pictureUrl" : "",
   "centerStar" : {
     "type" : "star",
     "name" : "Sun",
-    "pictureUrl" : "http://bit.ly/333CTus",
-    "radius" : 695342.0,
-    "mass" : 1.9885E30,
-    "effectiveTemperature" : 5777.0
+    "pictureUrl" : "",
+    "radius" : 10.0,
+    "mass" : 10.0,
+    "effectiveTemperature" : 1000.0
   },
   "planets" : [ ]
 } ]
