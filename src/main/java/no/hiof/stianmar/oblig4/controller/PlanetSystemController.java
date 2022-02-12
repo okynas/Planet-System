@@ -22,7 +22,11 @@ public class PlanetSystemController {
     public void getOnePlanetSystem(Context context) {
         String planetSystemName = context.pathParam("planet-system-id");
         PlanetSystem planetSystem = universeRepository.getPlanetSystem(planetSystemName);
-        context.json(planetSystem);
+        if (planetSystem == null) {
+            context.status(404).result("Not found");
+        } else {
+            context.json(planetSystem);
+        }
     }
 
     public void getAllPlanetSystems (Context context) {
