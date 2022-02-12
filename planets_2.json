@@ -64,7 +64,8 @@
       "eccentricity" : 0.017,
       "orbitalPeriod" : 365.0
     }]
-  }, {
+  },
+    {
     "type" : "Planet",
     "name" : "Mars",
     "pictureUrl" : "http://bit.ly/3aGyFvr",
@@ -91,7 +92,8 @@
       "eccentricity" : 0.017,
       "orbitalPeriod" : 365.0
     }]
-  }, {
+  },
+    {
     "type" : "Planet",
     "name" : "Neptune",
     "pictureUrl" : "http://bit.ly/38AyEba",
@@ -146,7 +148,8 @@
       "eccentricity" : 0.017,
       "orbitalPeriod" : 365.0
     }]
-  }, {
+  },
+    {
     "type" : "Planet",
     "name" : "Uranus",
     "pictureUrl" : "http://bit.ly/335pbHy",
@@ -173,7 +176,8 @@
       "eccentricity" : 0.017,
       "orbitalPeriod" : 365.0
     }]
-  }, {
+  },
+    {
     "type" : "Planet",
     "name" : "Venus",
     "pictureUrl" : "http://bit.ly/2W3p4L9",
@@ -200,7 +204,8 @@
       "eccentricity" : 0.017,
       "orbitalPeriod" : 365.0
     }]
-  }, {
+  },
+    {
     "type" : "Planet",
     "name" : "Mercury",
     "pictureUrl" : "http://bit.ly/2TB2Heo",

@@ -35,6 +35,7 @@ public abstract class CelestialBody implements Comparable<Planet>{
     private double mass;
 
     public static final int ASTRONOMICAL_UNITS_IN_KM = 149597871;
+
     public static final double GRAVITATIONAL_CONSTANT = 6.67408E-11;
 
     public CelestialBody() {

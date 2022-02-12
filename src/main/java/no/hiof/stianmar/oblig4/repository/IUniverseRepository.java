@@ -22,7 +22,7 @@ public interface IUniverseRepository {
     void updatePlanet(String planetSystemNavn, String oldPlanetName, String planetName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde);
     void deletePlanet(String planetSystemNavn, String planetNavn, String filkilde) throws IOException;
 
-    Moon getOneMoon(String moonName);
+    Moon getOneMoon(String planetSystemName, String planetName, String moonName);
     ArrayList<Moon> getAllMoons(String planetSystemName, String planetName);
 }
 

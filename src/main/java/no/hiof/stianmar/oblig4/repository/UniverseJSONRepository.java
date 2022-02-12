@@ -226,7 +226,13 @@ public class UniverseJSONRepository implements IUniverseRepository{
     }
 
     @Override
-    public Moon getOneMoon(String moonName) {
+    public Moon getOneMoon(String planetSystemName, String planetName, String moonName) {
+        ArrayList<Moon> allMoons = getPlanet(planetSystemName, planetName).getMoon();
+        for (int i = 0; i < allMoons.size(); i++) {
+            if (allMoons.get(i).getName().equals(moonName)) {
+                return allMoons.get(i);
+            }
+        }
         return null;
     }
 

@@ -24,15 +24,11 @@ public class PlanetController {
 
         Planet onePlanet = universeRepository.getPlanet(planetSystemName, planetName);
 
-        context.json(onePlanet);
-    }
-
-    public void getAllMoons(Context context) {
-        String planetSystemName = context.pathParam("planet-system-id");
-        String planetName = context.pathParam("planet-id");
-        ArrayList<Moon> moons = universeRepository.getAllMoons(planetSystemName, planetName);
-
-        context.json(moons);
+        if (onePlanet == null) {
+            context.status(404).result("Not found");
+        } else {
+            context.json(onePlanet);
+        }
     }
 
     public void getAllPlanets(Context context) {
@@ -42,6 +38,26 @@ public class PlanetController {
 
         ArrayList<Planet> planets = universeRepository.getAllPlanets(planetSystemName);
 
+        /**
+         * Sorterer planetene ut ifra kriterier: navn, masse, radius og tiden det tar for en runde rundt sola.
+         * Returnerer -1 hvis o1 < o2,
+         * Returnerer 0 hvis o1 = o2
+         * Returnerer 1 hvis o1 > o2.
+         *
+         * Flere måter å sortere:
+         * Collection.sort(ArrayList)
+         *
+         * arraylist.sort( (element1, element2) -> (int) (element1 - element2);
+         *
+         * HVIS den ikke implementerer comparator. Denne er også synkende.
+         * Collection.sort(Arraylist, new Comparator<CustomData>() {
+         *      @Override
+         *      public int compare(CustomData lhs, CustomData rhs) {
+         *          return lhs.customInt > rhs.customInt ? -1 : (lhs.customInt < rhs.customInt) ? 1 : 0;
+         *      }
+         * })
+         *
+         */
         if (sortBy != null) {
             switch (sortBy) {
                 case "name":
@@ -71,9 +87,8 @@ public class PlanetController {
     }
 
     public void deletePlanet(Context context) {
-            String planetSystemName = context.pathParam("planet-system-id");
-            String planetName = context.pathParam("planet-id");
-
+        String planetSystemName = context.pathParam("planet-system-id");
+        String planetName = context.pathParam("planet-id");
 
         try {
             universeRepository.deletePlanet(planetSystemName, planetName, Application.filkilde);

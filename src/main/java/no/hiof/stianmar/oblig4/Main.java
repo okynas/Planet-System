@@ -1,9 +1,7 @@
 package no.hiof.stianmar.oblig4;
 
-import no.hiof.stianmar.oblig4.model.Moon;
-import no.hiof.stianmar.oblig4.model.Planet;
-import no.hiof.stianmar.oblig4.model.PlanetSystem;
-import no.hiof.stianmar.oblig4.model.Star;
+import no.hiof.stianmar.oblig4.model.*;
+
 
 import java.util.ArrayList;
 

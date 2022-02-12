@@ -2,8 +2,10 @@ package no.hiof.stianmar.oblig4;
 
 import io.javalin.Javalin;
 import io.javalin.plugin.rendering.vue.VueComponent;
+import no.hiof.stianmar.oblig4.controller.MoonController;
 import no.hiof.stianmar.oblig4.controller.PlanetController;
 import no.hiof.stianmar.oblig4.controller.PlanetSystemController;
+import no.hiof.stianmar.oblig4.model.Moon;
 import no.hiof.stianmar.oblig4.repository.UniverseJSONRepository;
 
 
@@ -28,6 +30,7 @@ public class Application {
         UniverseJSONRepository universeJSONRepository = new UniverseJSONRepository(filkilde);
         PlanetSystemController planetSystemController = new PlanetSystemController(universeJSONRepository);
         PlanetController planetController = new PlanetController(universeJSONRepository);
+        MoonController moonController = new MoonController(universeJSONRepository);
 
 
         //
@@ -74,7 +77,8 @@ public class Application {
         //
 
         // moons - overview:
-        app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon", planetController::getAllMoons);
+        app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon", moonController::getAllMoons);
+        app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", moonController::getOneMoon);
 
         // TODO:
         // Adding routes to one moon
