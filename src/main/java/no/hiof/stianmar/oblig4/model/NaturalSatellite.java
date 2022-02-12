@@ -89,7 +89,7 @@ public abstract class NaturalSatellite extends CelestialBody{
         double a = getSemiMajorAxis();
         double e = getEccentricity();
 
-        return (int) ( AU *(a * ( 1 - Math.pow(e, 2) ) ) / (1 + e * Math.cos(Math.toRadians(degrees))));
+        return (int) ( ASTRONOMICAL_UNITS_IN_KM *(a * ( 1 - Math.pow(e, 2) ) ) / (1 + e * Math.cos(Math.toRadians(degrees))));
     }
 
     public int distanceToCentralBodyRadian(double radians) {
