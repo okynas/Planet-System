@@ -47,9 +47,11 @@ public class PlanetController {
          * Flere måter å sortere:
          * Collection.sort(ArrayList)
          *
-         * arraylist.sort( (element1, element2) -> (int) (element1 - element2);
+         * list.sort( (element1, element2) -> (int) (element1 - element2);
+         * Bruker list.sort() fordi denne kan implementeres ved å sortere primitive typer.
          *
-         * HVIS den ikke implementerer comparator. Denne er også synkende.
+         * HVIS den ikke implementerer comparator. Denne er også synkende. Kan gjøre det slik, eller lage en ny klasse
+         * som implementerer Comparator interfacet.
          * Collection.sort(Arraylist, new Comparator<CustomData>() {
          *      @Override
          *      public int compare(CustomData lhs, CustomData rhs) {

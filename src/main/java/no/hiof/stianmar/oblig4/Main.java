@@ -103,5 +103,23 @@ public class Main {
         // create solar system
         PlanetSystem milkyWay = new PlanetSystem("Solar System", sun, planetsInSolarSystem, "https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg");
 
+<<<<<<< Updated upstream
+=======
+        System.out.println(milkyWay.greatestPlanet());
+        System.out.println(milkyWay.smallestPlanet());
+        System.out.println(milkyWay.smallestPlanet().surfaceGravity() + " kg/m^2");
+        System.out.println(earth.surfaceGravity() + " kg/m^2");
+
+
+        Star keplerStar = new Star("Kepler Star", 69534, 6.555885E21, 7441, "https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg");
+        Planet keplerE32 = new Planet("kepler E 32", 4.66E3, 4551, 141, 0.5, 44, keplerStar, "", null);
+        ArrayList<Planet> keplerPlanets = new ArrayList<>();
+        keplerPlanets.add(keplerE32);
+        PlanetSystem kepler = new PlanetSystem("Kepler", keplerStar, keplerPlanets, "");
+
+        System.out.println("---");
+        System.out.println(kepler.getPlanets().get(0).compareTo(milkyWay.getPlanets().get(0)));
+
+>>>>>>> Stashed changes
     }
 }

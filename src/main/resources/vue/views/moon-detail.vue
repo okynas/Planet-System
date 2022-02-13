@@ -13,10 +13,10 @@
             the eccentricity or the deviation of orbit is from a circularity is {{moon.eccentricity}}.</p>
         <p>Orbiting period of {{moon.orbitalPeriod}} days.</p>
 
-        <!-- <p>
-            <a class="button" :href="`/api/planet-systems/${planetSystemName}/planets/${planet.name}/delete`">Delete</a>
-            <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a>
-        </p> -->
+        <p>
+            <a class="button" :href="`/api/planet-systems/${planetSystemName}/planets/${planet}/moon/${moonId}/delete`">Delete</a>
+            <!-- <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a> -->
+        </p>
 
         <!-- <ul class="list-of-moons">
             <li v-for="moon in moons" class="link-to-planet-details" >
@@ -38,8 +38,9 @@
     Vue.component("moon-detail", {
         template: "#moon-detail",
         data: () => ({
-            planet: null,
+            planet: "",
             moon: null,
+            moonId: "",
             planetSystemName: "",
         }),
         created() {
@@ -48,6 +49,7 @@
             const planetId = this.$javalin.pathParams["planet-id"];
             this.planet = planetId;
             const moonId = this.$javalin.pathParams["moon-id"];
+            this.moonId = moonId;
             fetch(`/api/planet-systems/${planetSystemId}/planets/${planetId}/moon/${moonId}`)
 
                 .then(res => res.json())

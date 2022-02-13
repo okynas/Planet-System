@@ -83,10 +83,14 @@ public class Application {
         app.get("/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", new VueComponent("moon-detail"));
 
         // TODO:
+<<<<<<< Updated upstream
         // Adding routes to one moon
         // Adding routes to create moon
+=======
+>>>>>>> Stashed changes
         // Adding routes to update moon
         // Adding routes to delete moon
+        app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id/delete", moonController::deleteMoon);
 
     }
 }

@@ -240,4 +240,65 @@ public class UniverseJSONRepository implements IUniverseRepository{
 
         return new ArrayList<Moon>();
     }
+<<<<<<< Updated upstream
+=======
+
+    @Override
+    public void createMoon(String planetSystemName, String planetName, String moonName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde) {
+
+        for (PlanetSystem planetSystem : planetSystems) {
+
+            for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
+
+                if (planetSystem.getName().equals(planetSystemName) && planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+
+                    if (planetSystem.getPlanets().get(i).getMoon() == null) {
+                        Moon moon = new Moon(moonName, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod);
+                        ArrayList<Moon> moons = new ArrayList<>(); // planetSystem.getPlanets().get(i).getMoon();
+                        moons.add(moon);
+                        planetSystem.getPlanets().get(i).setMoon(moons);
+                        writeToJSONFile(filkilde, planetSystems);
+                        break;
+                    } else {
+                        for (int j = 0; j < planetSystem.getPlanets().get(i).getMoon().size(); j++) {
+
+                            if ( !planetSystem.getPlanets().get(i).getMoon().get(j).equals(moonName)) {
+                                Moon moon = new Moon(moonName, radius, mass, semiMajorAxis, eccentricity, orbitalPeriod);
+                                ArrayList<Moon> moons = planetSystem.getPlanets().get(i).getMoon();
+                                moons.add(moon);
+                                writeToJSONFile(filkilde, planetSystems);
+                                break;
+                            } else {
+                                System.out.println("Moon exists");
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    @Override
+    public void deleteMoon(String planetSystemName, String planetName, String moonName, String filkilde) {
+
+        for (PlanetSystem planetSystem : planetSystems) {
+            if (planetSystem.getName().equals(planetSystemName)) {
+                System.out.println("PLANETNAME");
+                Planet planet = planetSystem.getOnePlanet(planetName);
+                ArrayList<Moon> moons = planet.getMoon();
+
+                for (int i = 0; i < moons.size(); i++) {
+                    if (moons.get(i).getName().equals(moonName)) {
+                        moons.remove(i);
+                        writeToJSONFile(filkilde, planetSystems);
+                        break;
+                    }
+                }
+
+            }
+        }
+
+    }
+>>>>>>> Stashed changes
 }

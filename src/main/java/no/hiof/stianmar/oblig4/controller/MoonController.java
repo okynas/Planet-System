@@ -35,4 +35,33 @@ public class MoonController {
             context.json(oneMoon);
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    public void createMoon(Context context) {
+        String planetSystemName = context.pathParam("planet-system-id");
+        String planetNavn =  context.pathParam("planet-id");
+
+        String moonName = context.formParam("name");
+        String planetMasse = context.formParam("mass");
+        String planetRadius = context.formParam("radius");
+        String planetSemiMajor = context.formParam("semiMajorAxis");
+        String planetEccentricity = context.formParam("eccentricity");
+        String planetOrbital = context.formParam("orbitalPeriod");
+        String planetPictureUrl = context.formParam("pictureUrl");
+
+        universeRepository.createMoon(planetSystemName, planetNavn, moonName, Double.parseDouble(planetMasse), Double.parseDouble(planetRadius), Double.parseDouble(planetSemiMajor), Double.parseDouble(planetEccentricity), Double.parseDouble(planetOrbital), planetPictureUrl, Application.filkilde);
+
+        context.redirect("/planet-systems/" + planetSystemName + "/planets/" + planetNavn);
+    }
+
+    public void deleteMoon(Context context) {
+        String planetSystemName = context.pathParam("planet-system-id");
+        String planetNavn =  context.pathParam("planet-id");
+        String moonName = context.pathParam("moon-id");
+
+        universeRepository.deleteMoon(planetSystemName, planetNavn, moonName, Application.filkilde);
+        context.redirect("/planet-systems/" + planetSystemName + "/planets/" + planetNavn);
+    }
+>>>>>>> Stashed changes
 }
