@@ -24,16 +24,18 @@ public class Star extends CelestialBody {
         this.effectiveTemperature = effectiveTemp;
     }
 
-    @JsonIgnore
     public double getEffectiveTemperature() {
         return effectiveTemperature;
     }
 
-    @JsonIgnore
     public void setEffectiveTemperature(double effectiveTemperature) {
         this.effectiveTemperature = effectiveTemperature;
     }
 
+
+    /**
+     * Masse og radius i forhold til sola.
+     */
     @JsonIgnore
     public double mSun() {
         return getMass() / solarMass;

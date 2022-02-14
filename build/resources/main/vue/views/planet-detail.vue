@@ -1,7 +1,7 @@
 <template id="planet-detail">
     <div v-if="planet" class="detail-planet-container">
         {{console.log(this.planet)}}
-        <a href="#" class="homeBTN">&larr; HOME</a>
+        <a class="backBtn2" v-bind:href="'/planet-systems/' + planetSystemName ">Back</a>
         <h1>{{planet.name}}</h1>
         <img v-if="planet.pictureUrl" v-bind:src="planet.pictureUrl" />
         <img v-else class="list-image" src="https://exoplanets.nasa.gov/system/resources/detail_files/137_heic1312a.jpg"/>
@@ -15,20 +15,29 @@
             <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a>
         </p>
 
+        <h2>Moons</h2>
+
+        <p>
+            <!-- <a class="button" :href="`/api/planet-systems/${planetSystemName}/planets/${planet.name}/delete`">Delete</a> -->
+            <!-- <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a> -->
+            <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/createmoon`">Create</a>
+        </p>
+
         <ul class="list-of-moons">
             <li v-for="moon in moons" class="link-to-planet-details" >
                 <div v-if="moon">
                     <p>{{moon.name}}</p>
-                    <span v-if="planet" class="link-to-moon-details">
+                    <a v-if="planet" class="link-to-moon-details" v-bind:href="'/planet-systems/' + planetSystemName + '/planets/' + planet.name +'/moon/' + moon.name">
                         <div class="single-planet-container" >
                             <h1>{{moon.name}}</h1>
                             <img v-if="moon.pictureUrl" class="list-image" v-bind:src="moon.pictureUrl">
-                            <img v-else class="list-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
+                            <img v-else class="list-image" src="https://exoplanets.nasa.gov/system/resources/detail_files/137_heic1312a.jpg">
                         </div>
-                    </span>
+                    </a>
                 </div>
             </li>
         </ul>
+
     </div>
 </template>
 <script>
@@ -57,6 +66,14 @@
     });
 </script>
 <style>
+
+    .backBtn2 {
+        text-align: center;
+        color: white;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
     ul{
        color:white;
     }

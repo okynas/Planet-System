@@ -14,34 +14,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class UniverseJSONRepository implements IUniverseRepository{
+public class UniverseJSONRepository implements IUniverseRepository {
 
     private ArrayList<PlanetSystem> planetSystems = new ArrayList<>();
 
     public UniverseJSONRepository(String filnavn) {
-
         ArrayList<PlanetSystem> planetSystemerFraJSONFil = readFromJSONFile(filnavn);
-
         planetSystems.addAll(planetSystemerFraJSONFil);
-
-        // deletePlanet("Solar System", "Mars", filnavn);
-        /* createPlanet("Solar System",
-         "Mars",
-         6.39E23,
-         3389.5,
-         1.524,
-         0.093,
-         687,
-         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mars_23_aug_2003_hubble.jpg/480px-Mars_23_aug_2003_hubble.jpg",
-         filnavn);
-         */
-
     }
 
-    /*public UniverseJSONRepository(File file) {
-
-    }*/
-
+    /**
+     * Bruker ObjectMapper til å serialisere og de-serialisere mellom java objekter og JSON.
+     *
+     * DE-serialisere = transformere bytes fra en fil f.eks og gjør det om til data i minnet.
+     */
     private ArrayList<PlanetSystem> readFromJSONFile(String filnavn) {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -58,6 +44,11 @@ public class UniverseJSONRepository implements IUniverseRepository{
         return planetSystemsReadFromFile;
     }
 
+    /**
+     * Bruker objectMApper til å
+     *
+     * Serialisere = transformere data i minnet til en sekvens av bytes som kan lagres i en datafil.
+     */
     public static void writeToJSONFile(String filnavn, ArrayList<PlanetSystem> planetSystems) {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -109,24 +100,36 @@ public class UniverseJSONRepository implements IUniverseRepository{
     @Override
     public void createPlanet(String planetSystemName, String planetName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde) {
 
+        System.out.println("Starting create planet");
         for (PlanetSystem planetSystem : planetSystems) {
-            for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
-                if (planetSystem.getName().equals(planetSystemName) && !planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+            if (planetSystem.getName().equals(planetSystemName) && planetSystem.getPlanets().size() == 0) {
+                System.out.println("No planets, creating noww");
+                Star centralStar = planetSystem.getCenterStar();
 
-                    Star centralStar = planetSystem.getCenterStar();
-                    Moon moon = new Moon();
-                    ArrayList<Moon> moons = new ArrayList<>();
-                    moons.add(moon);
+                Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
+                ArrayList<Planet> planets = planetSystem.getPlanets();
+                planets.add(newPlanet);
 
-                    Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
-                    ArrayList<Planet> planets = planetSystem.getPlanets();
-                    planets.add(newPlanet);
+                writeToJSONFile(filkilde, planetSystems);
+                break;
+            }
+            else {
+                for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
+                    if (planetSystem.getName().equals(planetSystemName) && !planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+                        System.out.println("CREATING");
 
-                    writeToJSONFile(filkilde, planetSystems);
-                    break;
+                        Star centralStar = planetSystem.getCenterStar();
 
-                } else if (planetSystem.getPlanets().get(i).getName().equals(planetName)) {
-                    System.out.println("Planet does exist");
+                        Planet newPlanet = new Planet(planetName, mass, radius, semiMajorAxis, eccentricity, orbitalPeriod, centralStar, pictureUrl, null);
+                        ArrayList<Planet> planets = planetSystem.getPlanets();
+                        planets.add(newPlanet);
+
+                        writeToJSONFile(filkilde, planetSystems);
+                        break;
+
+                    } else if (planetSystem.getPlanets().get(i).getName().equals(planetName)) {
+                        System.out.println("Planet does exist");
+                    }
                 }
             }
         }
@@ -172,14 +175,13 @@ public class UniverseJSONRepository implements IUniverseRepository{
             for (int i = 0; i < planetSystem.getPlanets().size(); i++) {
                 if (!planetSystem.getName().equals(planetSystemNavn) && planetSystem.getPlanets().get(i) == null) {
                     System.out.println("Planet does not exist");
-                } else if (planetSystem.getPlanets().get(i).getName().equals(planetNavn)) {
+                } else if (planetSystem.getPlanets().get(i).getName().equals(planetNavn) && planetSystem.getName().equals(planetSystemNavn)) {
 
                     ArrayList<Planet> planets = planetSystem.getPlanets();
                     planets.remove(planetSystem.getPlanets().get(i));
 
                     writeToJSONFile(filkilde, planetSystems);
                     break;
-
                 }
             }
         }
@@ -240,8 +242,7 @@ public class UniverseJSONRepository implements IUniverseRepository{
 
         return new ArrayList<Moon>();
     }
-<<<<<<< Updated upstream
-=======
+
 
     @Override
     public void createMoon(String planetSystemName, String planetName, String moonName, double mass, double radius, double semiMajorAxis, double eccentricity, double orbitalPeriod, String pictureUrl, String filkilde) {
@@ -278,27 +279,4 @@ public class UniverseJSONRepository implements IUniverseRepository{
             }
         }
     }
-
-    @Override
-    public void deleteMoon(String planetSystemName, String planetName, String moonName, String filkilde) {
-
-        for (PlanetSystem planetSystem : planetSystems) {
-            if (planetSystem.getName().equals(planetSystemName)) {
-                System.out.println("PLANETNAME");
-                Planet planet = planetSystem.getOnePlanet(planetName);
-                ArrayList<Moon> moons = planet.getMoon();
-
-                for (int i = 0; i < moons.size(); i++) {
-                    if (moons.get(i).getName().equals(moonName)) {
-                        moons.remove(i);
-                        writeToJSONFile(filkilde, planetSystems);
-                        break;
-                    }
-                }
-
-            }
-        }
-
-    }
->>>>>>> Stashed changes
 }

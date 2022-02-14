@@ -1,10 +1,12 @@
 package no.hiof.stianmar.oblig4.controller;
 
 import io.javalin.http.Context;
+import no.hiof.stianmar.oblig4.Application;
 import no.hiof.stianmar.oblig4.model.Moon;
 import no.hiof.stianmar.oblig4.model.Planet;
 import no.hiof.stianmar.oblig4.repository.IUniverseRepository;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MoonController {
@@ -35,8 +37,7 @@ public class MoonController {
             context.json(oneMoon);
         }
     }
-<<<<<<< Updated upstream
-=======
+
 
     public void createMoon(Context context) {
         String planetSystemName = context.pathParam("planet-system-id");
@@ -54,14 +55,4 @@ public class MoonController {
 
         context.redirect("/planet-systems/" + planetSystemName + "/planets/" + planetNavn);
     }
-
-    public void deleteMoon(Context context) {
-        String planetSystemName = context.pathParam("planet-system-id");
-        String planetNavn =  context.pathParam("planet-id");
-        String moonName = context.pathParam("moon-id");
-
-        universeRepository.deleteMoon(planetSystemName, planetNavn, moonName, Application.filkilde);
-        context.redirect("/planet-systems/" + planetSystemName + "/planets/" + planetNavn);
-    }
->>>>>>> Stashed changes
 }

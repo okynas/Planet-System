@@ -2,6 +2,7 @@ package no.hiof.stianmar.oblig4;
 
 import no.hiof.stianmar.oblig4.model.*;
 
+
 import java.util.ArrayList;
 
 public class Main {
@@ -103,8 +104,7 @@ public class Main {
         // create solar system
         PlanetSystem milkyWay = new PlanetSystem("Solar System", sun, planetsInSolarSystem, "https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg");
 
-<<<<<<< Updated upstream
-=======
+
         System.out.println(milkyWay.greatestPlanet());
         System.out.println(milkyWay.smallestPlanet());
         System.out.println(milkyWay.smallestPlanet().surfaceGravity() + " kg/m^2");
@@ -120,6 +120,6 @@ public class Main {
         System.out.println("---");
         System.out.println(kepler.getPlanets().get(0).compareTo(milkyWay.getPlanets().get(0)));
 
->>>>>>> Stashed changes
+
     }
 }

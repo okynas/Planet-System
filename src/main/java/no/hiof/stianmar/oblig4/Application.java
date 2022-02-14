@@ -37,16 +37,16 @@ public class Application {
         // ROUTING TO Planetsystems
         //
 
+        // create
+        app.get("/planet-systems/createPlanetSystem", new VueComponent("planet-systems-create"));
+        app.post("/api/planet-systems/createPlanetSystem", planetSystemController::createPlanetSystem);
+
         // - overview / detail
         app.get("/planet-systems", new VueComponent("planet-systems-overview"));
         app.get("/planet-systems/:planet-system-id", new VueComponent("planet-systems-detail"));
 
         app.get("/api/planet-systems", planetSystemController::getAllPlanetSystems);
         app.get("/api/planet-systems/:planet-system-id", planetSystemController::getOnePlanetSystem);
-
-        // create
-        app.get("/planet-systems/createPlanetSystem", new VueComponent("planet-systems-create"));
-        app.post("/api/planet-systems/createPlanetSystem", planetSystemController::createPlanetSystem);
 
         // delete
         app.get("/api/planet-systems/:planet-system-id/delete", planetSystemController::deletePlanetSystem);
@@ -80,14 +80,14 @@ public class Application {
         app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon", moonController::getAllMoons);
         app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", moonController::getOneMoon);
 
+        // create planet
+        app.get("/planet-systems/:planet-system-id/planets/:planet-id/createmoon", new VueComponent("moon-create"));
+        app.post("/api/planet-systems/:planet-system-id/planets/:planet-id/createmoon", moonController::createMoon);
+
         app.get("/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id", new VueComponent("moon-detail"));
 
+
         // TODO:
-<<<<<<< Updated upstream
-        // Adding routes to one moon
-        // Adding routes to create moon
-=======
->>>>>>> Stashed changes
         // Adding routes to update moon
         // Adding routes to delete moon
         app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id/delete", moonController::deleteMoon);

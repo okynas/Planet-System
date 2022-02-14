@@ -1,4 +1,4 @@
-[{
+[ {
   "name" : "Solar System",
   "pictureUrl" : "http://bit.ly/3cVhuZc",
   "centerStar" : {
@@ -62,20 +62,20 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
+    "moon" : [ {
       "type" : "moon",
       "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
+      "pictureUrl" : null,
+      "radius" : 2.0,
+      "mass" : 2.0,
+      "semiMajorAxis" : 2.0,
+      "eccentricity" : 2.0,
+      "orbitalPeriod" : 2.0,
+      "centralCelestialBody" : null
+    } ]
+  }, {
     "type" : "Planet",
-<<<<<<< Updated upstream
+
     "name" : "Jupiter",
     "pictureUrl" : "http://bit.ly/2Q0fjK3",
     "radius" : 69911.0,
@@ -91,21 +91,9 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
+    "moon" : null
+  }, {
     "type" : "Planet",
-=======
->>>>>>> Stashed changes
     "name" : "Mars",
     "pictureUrl" : "http://bit.ly/3aGyFvr",
     "radius" : 3389.5,
@@ -121,7 +109,6 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-<<<<<<< Updated upstream
     "moon" : [{
       "type" : "moon",
       "name" : "Moon",
@@ -134,6 +121,7 @@
     }]
   },
     {
+
     "type" : "Planet",
     "name" : "Neptune",
     "pictureUrl" : "http://bit.ly/38AyEba",
@@ -142,18 +130,6 @@
     "semiMajorAxis" : 30.11,
     "eccentricity" : 0.01,
     "orbitalPeriod" : 60225.0,
-=======
-    "moon" : null
-  }, {
-    "type" : "Planet",
-    "name" : "Jupiter",
-    "pictureUrl" : "http://bit.ly/2Q0fjK3",
-    "radius" : 69911.0,
-    "mass" : 1.898E27,
-    "semiMajorAxis" : 5.2044,
-    "eccentricity" : 0.049,
-    "orbitalPeriod" : 4380.0,
->>>>>>> Stashed changes
     "centralCelestialBody" : {
       "type" : "star",
       "name" : "Sun",
@@ -162,18 +138,8 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
+    "moon" : null
+  }, {
     "type" : "Planet",
     "name" : "Saturn",
     "pictureUrl" : "http://bit.ly/2W0sqic",
@@ -190,18 +156,8 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
+    "moon" : null
+  }, {
     "type" : "Planet",
     "name" : "Uranus",
     "pictureUrl" : "http://bit.ly/335pbHy",
@@ -218,18 +174,8 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
+    "moon" : null
+  }, {
     "type" : "Planet",
     "name" : "Neptune",
     "pictureUrl" : "http://bit.ly/38AyEba",
@@ -246,126 +192,6 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
-    "type" : "Planet",
-    "name" : "Mercury",
-    "pictureUrl" : "http://bit.ly/2TB2Heo",
-    "radius" : 2439.7,
-    "mass" : 3.283E23,
-    "semiMajorAxis" : 0.387,
-    "eccentricity" : 0.206,
-    "orbitalPeriod" : 88.0,
-    "centralCelestialBody" : {
-      "type" : "star",
-      "name" : "Sun",
-      "pictureUrl" : "http://bit.ly/333CTus",
-      "radius" : 695342.0,
-      "mass" : 1.9885E30,
-      "effectiveTemperature" : 5777.0
-    },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  } ]
-
-},
-{
-  "name" : "Solar System2",
-  "pictureUrl" : "http://bit.ly/3cVhuZc",
-  "centerStar" : {
-    "type" : "star",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "name" : "Sun",
-    "pictureUrl" : "http://bit.ly/333CTus",
-    "radius" : 695342.0,
-    "mass" : 1.9885E30,
-    "effectiveTemperature" : 5777.0
-  },
-  "planets" : [ {
-    "type" : "Planet",
-    "name" : "Earth",
-    "pictureUrl" : "http://bit.ly/33bvXLZ",
-    "radius" : 6371.0,
-    "mass" : 5.972E24,
-    "semiMajorAxis" : 1.0,
-    "eccentricity" : 0.017,
-    "orbitalPeriod" : 365.0,
-    "centralCelestialBody" : {
-      "type" : "star",
-      "name" : "Sun",
-      "pictureUrl" : "http://bit.ly/333CTus",
-      "radius" : 695342.0,
-      "mass" : 1.9885E30,
-      "effectiveTemperature" : 5777.0
-    },
-    "moon" : [{
-      "type" : "moon",
-      "name" : "Moon",
-      "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-      "radius" : 6371.0,
-      "mass" : 5.972E24,
-      "semiMajorAxis" : 1.0,
-      "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  }
-   ]
-  }
-]
-=======
-    "name" : "Star",
-    "pictureUrl" : "",
-    "radius" : 2.0,
-    "mass" : 2.0,
-    "effectiveTemperature" : 2.0
-  },
-  "planets" : [ {
-    "type" : "Planet",
-    "name" : "Planet A",
-    "pictureUrl" : "",
-    "radius" : 10.0,
-    "mass" : 10.0,
-    "semiMajorAxis" : 10.0,
-    "eccentricity" : 10.0,
-    "orbitalPeriod" : 10.0,
-    "centralCelestialBody" : {
-      "type" : "star",
-      "name" : "Star",
-      "pictureUrl" : "",
-      "radius" : 2.0,
-      "mass" : 2.0,
-      "effectiveTemperature" : 2.0
-    },
     "moon" : null
   } ]
 } ]
->>>>>>> Stashed changes
-=======
-    "name" : "Kepler Star",
-    "pictureUrl" : "",
-    "radius" : 10.0,
-    "mass" : 10.0,
-    "effectiveTemperature" : 10.0
-  },
-  "planets" : [ ]
-} ]
->>>>>>> Stashed changes
