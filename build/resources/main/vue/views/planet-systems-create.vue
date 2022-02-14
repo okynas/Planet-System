@@ -1,5 +1,5 @@
 <template id="planet-systems-create" @planet-submitted="createPlanetSystem">
-    <!-- <div class="form-style">
+    <div class="form-style">
         <h2>Create new PlanetSystem</h2>
         <form class="create" @submit="checkForm" :action=`/api/planet-systems/createPlanetSystem` method="post">
             <div v-if="errors.length">
@@ -49,7 +49,7 @@
             </p>
 
         </form>
-    </div> -->
+    </div>
 
 </template>
 <script>

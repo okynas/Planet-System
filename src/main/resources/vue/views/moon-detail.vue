@@ -13,10 +13,10 @@
             the eccentricity or the deviation of orbit is from a circularity is {{moon.eccentricity}}.</p>
         <p>Orbiting period of {{moon.orbitalPeriod}} days.</p>
 
-        <p>
+        <!-- <p>
             <a class="button" :href="`/api/planet-systems/${planetSystemName}/planets/${planet}/moon/${moonId}/delete`">Delete</a>
-            <!-- <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a> -->
-        </p>
+            <a class="button" :href="`/planet-systems/${planetSystemName}/planets/${planet.name}/update`">Edit</a>
+        </p>-->
 
         <!-- <ul class="list-of-moons">
             <li v-for="moon in moons" class="link-to-planet-details" >
