@@ -90,7 +90,7 @@ public class Application {
         // TODO:
         // Adding routes to update moon
         // Adding routes to delete moon
-        app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id/delete", moonController::deleteMoon);
+        // app.get("/api/planet-systems/:planet-system-id/planets/:planet-id/moon/:moon-id/delete", moonController::deleteMoon);
 
     }
 }
