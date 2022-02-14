@@ -11,6 +11,42 @@
   },
   "planets" : [ {
     "type" : "Planet",
+    "name" : "Mercury",
+    "pictureUrl" : "http://bit.ly/2TB2Heo",
+    "radius" : 2439.7,
+    "mass" : 3.283E23,
+    "semiMajorAxis" : 0.387,
+    "eccentricity" : 0.206,
+    "orbitalPeriod" : 88.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : null
+  }, {
+    "type" : "Planet",
+    "name" : "Venus",
+    "pictureUrl" : "http://bit.ly/2W3p4L9",
+    "radius" : 6051.8,
+    "mass" : 4.867E24,
+    "semiMajorAxis" : 0.723,
+    "eccentricity" : 0.007,
+    "orbitalPeriod" : 225.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : null
+  }, {
+    "type" : "Planet",
     "name" : "Earth",
     "pictureUrl" : "http://bit.ly/33bvXLZ",
     "radius" : 6371.0,
@@ -39,6 +75,7 @@
   },
     {
     "type" : "Planet",
+<<<<<<< Updated upstream
     "name" : "Jupiter",
     "pictureUrl" : "http://bit.ly/2Q0fjK3",
     "radius" : 69911.0,
@@ -67,6 +104,8 @@
   },
     {
     "type" : "Planet",
+=======
+>>>>>>> Stashed changes
     "name" : "Mars",
     "pictureUrl" : "http://bit.ly/3aGyFvr",
     "radius" : 3389.5,
@@ -82,6 +121,7 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
+<<<<<<< Updated upstream
     "moon" : [{
       "type" : "moon",
       "name" : "Moon",
@@ -102,6 +142,18 @@
     "semiMajorAxis" : 30.11,
     "eccentricity" : 0.01,
     "orbitalPeriod" : 60225.0,
+=======
+    "moon" : null
+  }, {
+    "type" : "Planet",
+    "name" : "Jupiter",
+    "pictureUrl" : "http://bit.ly/2Q0fjK3",
+    "radius" : 69911.0,
+    "mass" : 1.898E27,
+    "semiMajorAxis" : 5.2044,
+    "eccentricity" : 0.049,
+    "orbitalPeriod" : 4380.0,
+>>>>>>> Stashed changes
     "centralCelestialBody" : {
       "type" : "star",
       "name" : "Sun",
@@ -179,13 +231,13 @@
   },
     {
     "type" : "Planet",
-    "name" : "Venus",
-    "pictureUrl" : "http://bit.ly/2W3p4L9",
-    "radius" : 6051.8,
-    "mass" : 4.867E24,
-    "semiMajorAxis" : 0.723,
-    "eccentricity" : 0.007,
-    "orbitalPeriod" : 225.0,
+    "name" : "Neptune",
+    "pictureUrl" : "http://bit.ly/38AyEba",
+    "radius" : 24622.0,
+    "mass" : 1.024E26,
+    "semiMajorAxis" : 30.11,
+    "eccentricity" : 0.01,
+    "orbitalPeriod" : 60225.0,
     "centralCelestialBody" : {
       "type" : "star",
       "name" : "Sun",
@@ -240,6 +292,7 @@
   "pictureUrl" : "http://bit.ly/3cVhuZc",
   "centerStar" : {
     "type" : "star",
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "name" : "Sun",
     "pictureUrl" : "http://bit.ly/333CTus",
@@ -304,5 +357,15 @@
     },
     "moon" : null
   } ]
+} ]
+>>>>>>> Stashed changes
+=======
+    "name" : "Kepler Star",
+    "pictureUrl" : "",
+    "radius" : 10.0,
+    "mass" : 10.0,
+    "effectiveTemperature" : 10.0
+  },
+  "planets" : [ ]
 } ]
 >>>>>>> Stashed changes
