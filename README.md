@@ -66,6 +66,8 @@ To use this project, I usually ran it inside IntelliJ. So that is one possibilit
 ## **Timestamp**
 10 Mars 2020 - 21 Mars 2020
 
+*Updated*: 14.2.2022
+
 ## **Wish list**
 If I had more time or want/wanted to improve something, it would have to be the styling of the project. Since it was a school project, and the underlying task was primarily to build backend in java (javalin). I didn't fokus enough on the frontend part. Also because we had a finished stylesheet (css). 
 
