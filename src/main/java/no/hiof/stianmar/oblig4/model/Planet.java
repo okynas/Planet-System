@@ -85,6 +85,8 @@ public class Planet extends NaturalSatellite {
      * Overflate Gravitasjon. Gitt av newtons law of universal gravitation:
      * https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation
      *
+     * Videre er det slik at måne og sola har overflategravitasjon så til en annen gang, kan denne metoden være i CelestialBody.java.
+     *
      * g = GM/r^2
      */
     @JsonIgnore

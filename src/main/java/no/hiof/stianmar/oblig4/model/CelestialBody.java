@@ -28,6 +28,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  * Benytter comparable til å sammenligne planeter. Les mer om i bunn av koden!
+ *
+ * Bruker denne klassen som himmellegeme. En planet er et himmellegemet, og en stjerne er et himmellegemet.
  */
 public abstract class CelestialBody implements Comparable<Planet>{
     private String name, pictureUrl;

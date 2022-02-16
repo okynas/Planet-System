@@ -22,7 +22,7 @@ public class Application {
     public static void main(String[] args) {
 
         Javalin app = Javalin.create().start(); // starting the program
-        app.config.enableWebjars(); // enabling static files.
+        app.config.enableWebjars(); // enabling static files., i fht vue.js
 
         app.get("/", ctx -> ctx.redirect("/planet-systems")); // redirect if the start entrypoint is wrong.
 

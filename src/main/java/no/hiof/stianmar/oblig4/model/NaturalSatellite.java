@@ -2,6 +2,16 @@ package no.hiof.stianmar.oblig4.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * I astronomi: objekter som går i bane rundt andre objekter. Kalles satelliter. Naturlig satelitt, måne, planet osv,
+ * går i bane gundt en annen planet, eller en stjerne.
+ *
+ * Ønsker beregninger for :
+ * - semi major axis: langste avstand til brennpunktet i en ellipse til yttersiden. Fra planet til stjerne den går i bane rundt
+ * - Eccentricity: tall mellom 0 og 1, som sier noe om formen på ellipsa.
+ * - Orbital period: tuden det tar å gå i bane rundt sirkelen.
+ * - Central Celestial Body: det objektet den naturlige satelliten går i bane rundt.
+ */
 public abstract class NaturalSatellite extends CelestialBody{
 
     private double semiMajorAxis;
@@ -75,6 +85,12 @@ public abstract class NaturalSatellite extends CelestialBody{
         this.centralCelestialBody = centralCelestialBody;
     }
 
+    /**
+     * avstand = (semi major akse) * (1 - eccentrisity^2) / (1 + eccentricity * cos (vinkel))
+     *
+     * @param degrees
+     * @return avstand mellom naturlig satellit og objektet
+     */
     public int distanceToCentralBody(double degrees) {
         double a = getSemiMajorAxis();
         double e = getEccentricity();
@@ -86,7 +102,12 @@ public abstract class NaturalSatellite extends CelestialBody{
         return distanceToCentralBody(Math.toDegrees(radians));
     }
 
-    // speed of orbiting satelite
+    /**
+     * v = sqrt( Gravitasjons-konstant * masse til central body / radius i meter)
+     *
+     * @param distance
+     * @return speed of orbiting satelite
+     */
     public double orbitingVelocity(double distance) {
         double G = GRAVITATIONAL_CONSTANT;
         double M = getCentralCelestialBody().getMass();

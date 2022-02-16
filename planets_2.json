@@ -11,42 +11,6 @@
   },
   "planets" : [ {
     "type" : "Planet",
-    "name" : "Mercury",
-    "pictureUrl" : "http://bit.ly/2TB2Heo",
-    "radius" : 2439.7,
-    "mass" : 3.283E23,
-    "semiMajorAxis" : 0.387,
-    "eccentricity" : 0.206,
-    "orbitalPeriod" : 88.0,
-    "centralCelestialBody" : {
-      "type" : "star",
-      "name" : "Sun",
-      "pictureUrl" : "http://bit.ly/333CTus",
-      "radius" : 695342.0,
-      "mass" : 1.9885E30,
-      "effectiveTemperature" : 5777.0
-    },
-    "moon" : null
-  }, {
-    "type" : "Planet",
-    "name" : "Venus",
-    "pictureUrl" : "http://bit.ly/2W3p4L9",
-    "radius" : 6051.8,
-    "mass" : 4.867E24,
-    "semiMajorAxis" : 0.723,
-    "eccentricity" : 0.007,
-    "orbitalPeriod" : 225.0,
-    "centralCelestialBody" : {
-      "type" : "star",
-      "name" : "Sun",
-      "pictureUrl" : "http://bit.ly/333CTus",
-      "radius" : 695342.0,
-      "mass" : 1.9885E30,
-      "effectiveTemperature" : 5777.0
-    },
-    "moon" : null
-  }, {
-    "type" : "Planet",
     "name" : "Earth",
     "pictureUrl" : "http://bit.ly/33bvXLZ",
     "radius" : 6371.0,
@@ -75,7 +39,6 @@
     } ]
   }, {
     "type" : "Planet",
-
     "name" : "Jupiter",
     "pictureUrl" : "http://bit.ly/2Q0fjK3",
     "radius" : 69911.0,
@@ -109,7 +72,7 @@
       "mass" : 1.9885E30,
       "effectiveTemperature" : 5777.0
     },
-    "moon" : [{
+    "moon" : [ {
       "type" : "moon",
       "name" : "Moon",
       "pictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
@@ -117,11 +80,38 @@
       "mass" : 5.972E24,
       "semiMajorAxis" : 1.0,
       "eccentricity" : 0.017,
-      "orbitalPeriod" : 365.0
-    }]
-  },
-    {
-
+      "orbitalPeriod" : 365.0,
+      "centralCelestialBody" : null
+    } ]
+  }, {
+    "type" : "Planet",
+    "name" : "Mercury",
+    "pictureUrl" : "http://bit.ly/2TB2Heo",
+    "radius" : 2439.7,
+    "mass" : 3.283E23,
+    "semiMajorAxis" : 0.387,
+    "eccentricity" : 0.206,
+    "orbitalPeriod" : 88.0,
+    "centralCelestialBody" : {
+      "type" : "star",
+      "name" : "Sun",
+      "pictureUrl" : "http://bit.ly/333CTus",
+      "radius" : 695342.0,
+      "mass" : 1.9885E30,
+      "effectiveTemperature" : 5777.0
+    },
+    "moon" : [ {
+      "type" : "moon",
+      "name" : "Test Moon",
+      "pictureUrl" : null,
+      "radius" : 2.0,
+      "mass" : 4.0,
+      "semiMajorAxis" : 44.0,
+      "eccentricity" : 4.0,
+      "orbitalPeriod" : 4.0,
+      "centralCelestialBody" : null
+    } ]
+  }, {
     "type" : "Planet",
     "name" : "Neptune",
     "pictureUrl" : "http://bit.ly/38AyEba",
@@ -177,13 +167,13 @@
     "moon" : null
   }, {
     "type" : "Planet",
-    "name" : "Neptune",
-    "pictureUrl" : "http://bit.ly/38AyEba",
-    "radius" : 24622.0,
-    "mass" : 1.024E26,
-    "semiMajorAxis" : 30.11,
-    "eccentricity" : 0.01,
-    "orbitalPeriod" : 60225.0,
+    "name" : "Venus",
+    "pictureUrl" : "http://bit.ly/2W3p4L9",
+    "radius" : 6051.8,
+    "mass" : 4.867E24,
+    "semiMajorAxis" : 0.723,
+    "eccentricity" : 0.007,
+    "orbitalPeriod" : 225.0,
     "centralCelestialBody" : {
       "type" : "star",
       "name" : "Sun",
